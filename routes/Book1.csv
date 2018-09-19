@@ -1,0 +1,3 @@
+col1,col2,col3,col4
+Text 1,"[{'id': 25, 'name': 'Hello', 'count': 1174}, {'id': 26, 'name': 'Bye', 'count':15}, {'id': 10, 'name': 'Inspiring', 'count': 24924}]","[{'id': 25, 'name': 'Hello', 'count': 1174}, {'id': 26, 'name': 'Bye', 'count':15}, {'id': 10, 'name': 'Inspiring', 'count': 24924}]","[' funnny', 'sad', 'temp']"
+Text 2,"[{'id': 25, 'name': 'Hello', 'count': 1174}, {'id': 26, 'name': 'Bye', 'count':15}, {'id': 10, 'name': 'Inspiring', 'count': 24924}]","[{'id': 25, 'name': 'Hello', 'count': 1174}, {'id': 26, 'name': 'Bye', 'count':15}, {'id': 10, 'name': 'Inspiring', 'count': 24924}]","[' funnny', 'sad', 'temp']"
