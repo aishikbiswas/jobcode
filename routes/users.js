@@ -32,6 +32,7 @@ function csvTojs(csv) {
   var lines=csv.split("\n");
   var result = [];
   var headers = lines[0].split(",");
+  headers[11] = 'views';
   var errCont = 0;
   for(var i=1; i<lines.length; i++) {
     var obj = {};
@@ -106,19 +107,28 @@ router.get('/', function(req, res) {
   //result = json.filter(u => u.tags.some(t => t.tag.includes(tag)));
 
   result = json.filter(
-            o => Object.keys(filterBy).every(
-                k => filterBy[k].some(
-                (f) =>  { 
-                    if(k=="tags"){
-                      return o[k].includes(f)
-                    }else{
-                      return o[k] === f 
-                    }
-                    })));
-  res.send(json.slice(0,10));  
+    o => Object.keys(filterBy).every(
+        k => filterBy[k].some(
+        (f) =>  { 
+            if(k=="tags"){
+              return o[k].includes(f)
+            }else{
+              return o[k] === f 
+            }
+            })));
+
+  result.sort(SortByID);
+  res.send(result.slice(0,10));  
   
 });
+function SortByID(x,y) {
+  return parseInt(x.views) - parseInt(y.views); 
+}
 
+
+function SortByName(x,y) {
+  return ((x.Name == y.Name) ? 0 : ((x.Name > y.Name) ? 1 : -1 ));
+}
 module.exports = router;
 var uniqEs6 = (arrArg) => {
   return arrArg.filter((elem, pos, arr) => {
